@@ -16,7 +16,7 @@ class Bienvenido extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [theme.colorScheme.primary.withOpacity(0.9), Colors.cyan.shade200],
+            colors: [theme.colorScheme.primary, Colors.cyan.shade200],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),

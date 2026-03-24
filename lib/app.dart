@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screens/Bienvenido.dart';
+import 'screens/bienvenido.dart';
 import 'screens/menu.dart';
 import 'screens/login.dart';
 import 'screens/registrar.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled/viewmodels/auth_viewmodel.dart';
-import 'package:untitled/viewmodels/prediction_viewmodel.dart';
+import 'package:cancer_esofago_app/viewmodels/auth_viewmodel.dart';
+import 'package:cancer_esofago_app/viewmodels/prediction_viewmodel.dart';
 
 import 'app.dart';
 
