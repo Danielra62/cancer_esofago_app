@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63d8cf39-0ed3-42a1-8e09-c5ad4bed4967" name="Changes" comment="Corrección en las dependencias, colocar en el orden correcto">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+    <list default="true" id="63d8cf39-0ed3-42a1-8e09-c5ad4bed4967" name="Changes" comment="Corrección en la ubicación de la variable global late (anti-patrón, causaba crasheos)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/prediccion/prediccion_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/prediccion/prediccion_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +42,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
@@ -50,6 +61,9 @@
     "accountId": "abaf62e4-c103-44ae-a767-59e9e2ff0f1f"
   }
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -80,7 +94,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "PRUEBAS",
     "ignore.virus.scanning.warn.message": "true",
     "io.flutter.project.isFirstOpen": "true",
     "io.flutter.reload.alreadyRun": "true",
@@ -106,7 +120,23 @@
       <option name="project" value="LOCAL" />
       <updated>1774329177924</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Cambio de nombre del proyecto">
+      <option name="closed" value="true" />
+      <created>1774329265757</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1774329265757</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Modificación del cómo se conecta con el servidor">
+      <option name="closed" value="true" />
+      <created>1774329767373</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774329767373</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -117,6 +147,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Corrección en las dependencias, colocar en el orden correcto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrección en las dependencias, colocar en el orden correcto" />
+    <MESSAGE value="Cambio de nombre del proyecto" />
+    <MESSAGE value="Modificación del cómo se conecta con el servidor" />
+    <MESSAGE value="Corrección en la ubicación de la variable global late (anti-patrón, causaba crasheos)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrección en la ubicación de la variable global late (anti-patrón, causaba crasheos)" />
   </component>
 </project>

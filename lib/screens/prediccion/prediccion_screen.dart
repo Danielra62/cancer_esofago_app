@@ -6,8 +6,6 @@ import 'package:provider/provider.dart';
 
 import '../../viewmodels/prediction_viewmodel.dart';
 
-late PredictionViewModel _vm;
-
 class PredictionScreen extends StatefulWidget {
   const PredictionScreen({super.key});
 
@@ -17,15 +15,13 @@ class PredictionScreen extends StatefulWidget {
 
 class _PredictionScreenState extends State<PredictionScreen> {
   File? _image;
+  late PredictionViewModel _vm;
 
   @override
   void initState() {
     super.initState();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _vm = Provider.of<PredictionViewModel>(context, listen: false);
-      _vm.clear();
-    });
+    _vm = Provider.of<PredictionViewModel>(context, listen: false);
+    _vm.clear();
   }
 
   @override
