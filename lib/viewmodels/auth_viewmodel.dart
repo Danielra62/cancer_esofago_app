@@ -15,43 +15,43 @@ class AuthViewModel extends ChangeNotifier {
   String? get error => _error;
 
   Future<bool> login(String email, String password) async {
-    print("===== LOGIN() INICIADO =====");
-    print("📩 Email: $email");
+    'log("===== LOGIN() INICIADO =====")';
+    'log("📩 Email: $email")';
 
     try {
       _loading = true;
       _error = null;
       notifyListeners();
 
-      print("📤 Enviando login al backend...");
+      'log("📤 Enviando login al backend...")';
       final u = await _authService.login(email, password);
-      print("📥 Respuesta del backend: $u");
+      'log("📥 Respuesta del backend: $u")';
 
       if (u == null) {
-        print("❌ Backend devolvió usuario NULL");
+        'log("❌ Backend devolvió usuario NULL")';
         throw Exception('Credenciales inválidas');
       }
 
       _user = u;
-      print("👤 Usuario recibido: id=${u.id}, nombre=${u.nombre}, email=${u.email}");
+      'log("👤 Usuario recibido: id=${u.id}, nombre=${u.nombre}, email=${u.email}")';
 
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('userEmail', u.email);
       await prefs.setInt('userId', u.id);
       await prefs.setString('userNombre', u.nombre);
 
-      print("💾 Usuario guardado en SharedPreferences");
+      'log(("💾 Usuario guardado en SharedPreferences")';
 
       if (u.pacienteId != null) {
         await prefs.setInt('pacienteId', u.pacienteId!);
-        print("💾 pacienteId guardado");
+        'log(("💾 pacienteId guardado")';
       }
 
-      print("===== LOGIN() EXITOSO =====");
+      'log(("===== LOGIN() EXITOSO =====")';
       return true;
 
     } catch (e) {
-      print("❌ ERROR EN LOGIN(): $e");
+      'log(("❌ ERROR EN LOGIN(): $e")';
       _error = e.toString();
       return false;
     } finally {
@@ -61,43 +61,43 @@ class AuthViewModel extends ChangeNotifier {
   }
 
   Future<bool> register(String nombre, String email, String password) async {
-    print("===== REGISTER() INICIADO =====");
-    print("👤 Nombre: $nombre, Email: $email");
+    'log(("===== REGISTER() INICIADO =====")';
+    'log(("👤 Nombre: $nombre, Email: $email")';
 
     try {
       _loading = true;
       _error = null;
       notifyListeners();
 
-      print("📤 Enviando registro al backend...");
+      'log(("📤 Enviando registro al backend...")';
       final u = await _authService.register(nombre, email, password);
-      print("📥 Respuesta del backend: $u");
+      'log(("📥 Respuesta del backend: $u")';
 
       if (u == null) {
-        print("❌ Backend devolvió usuario NULL");
+        'log(("❌ Backend devolvió usuario NULL")';
         throw Exception('Error al registrar usuario');
       }
 
       _user = u;
-      print("👤 Usuario creado: id=${u.id}");
+      'log(("👤 Usuario creado: id=${u.id}")';
 
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('userEmail', u.email);
       await prefs.setInt('userId', u.id);
       await prefs.setString('userNombre', u.nombre);
 
-      print("💾 Datos guardados en SharedPreferences");
+      'log(("💾 Datos guardados en SharedPreferences")';
 
       if (u.pacienteId != null) {
         await prefs.setInt('pacienteId', u.pacienteId!);
-        print("💾 pacienteId guardado");
+        'log(("💾 pacienteId guardado")';
       }
 
-      print("===== REGISTER() EXITOSO =====");
+      'log(("===== REGISTER() EXITOSO =====")';
       return true;
 
     } catch (e) {
-      print("❌ ERROR EN REGISTER(): $e");
+      'log(("❌ ERROR EN REGISTER(): $e")';
       _error = e.toString();
       return false;
     } finally {
@@ -107,16 +107,16 @@ class AuthViewModel extends ChangeNotifier {
   }
 
   Future<void> logout() async {
-    print("===== LOGOUT() =====");
+    'log(("===== LOGOUT() =====")';
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
-    print("🗑 SharedPreferences limpiado");
+    'log(("🗑 SharedPreferences limpiado")';
     _user = null;
     notifyListeners();
   }
 
   Future<void> loadSession() async {
-    print("===== loadSession() =====");
+    'log(("===== loadSession() =====")';
     final prefs = await SharedPreferences.getInstance();
 
     final email = prefs.getString('userEmail');
@@ -124,8 +124,8 @@ class AuthViewModel extends ChangeNotifier {
     final nombre = prefs.getString('userNombre');
     final pacienteId = prefs.getInt('pacienteId');
 
-    print("📦 Valores recuperados:");
-    print("email=$email, id=$id, nombre=$nombre, pacienteId=$pacienteId");
+    'log(("📦 Valores recuperados:")';
+    'log(("email=$email, id=$id, nombre=$nombre, pacienteId=$pacienteId")';
 
     if (email != null && id != null && nombre != null) {
       _user = User(
@@ -136,10 +136,10 @@ class AuthViewModel extends ChangeNotifier {
         pacienteId: pacienteId,
       );
 
-      print("👤 Sesión restaurada correctamente: $_user");
+      'log(("👤 Sesión restaurada correctamente: $_user")';
       notifyListeners();
     } else {
-      print("⚠ No hay datos suficientes para restaurar sesión");
+      'log(("⚠ No hay datos suficientes para restaurar sesión")';
     }
   }
 }
