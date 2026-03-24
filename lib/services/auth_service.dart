@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/user.dart';
+import '../config/app_config.dart';
 
 class AuthService {
-
-  final String baseUrl = "https://danielacr-bve7fwfeccg4brg2.brazilsouth-01.azurewebsites.net";
+  final String baseUrl = AppConfig.baseUrl;
 
   // ---------------- LOGIN ----------------
   Future<User?> login(String  email, String password) async {

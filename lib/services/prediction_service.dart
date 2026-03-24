@@ -2,9 +2,10 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
+import '../config/app_config.dart';
 
 class PredictionService {
-  final String baseUrl = "https://danielacr-bve7fwfeccg4brg2.brazilsouth-01.azurewebsites.net";
+  final String baseUrl = AppConfig.baseUrl;
 
   // =============================================
   // SUBIR IMAGEN PARA PREDICCIÓN
